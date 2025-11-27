@@ -125,11 +125,9 @@
             opacity: 0.9;
         }
 
-        /* 市场分析部分 */
-        .market-analysis {
+        /* 通用部分样式 */
+        section {
             padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .section-header {
@@ -150,6 +148,96 @@
             margin: 0 auto;
         }
 
+        /* 里程碑部分 */
+        .milestone-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .milestone-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .milestone-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--sbux-gold);
+            color: var(--sbux-dark);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            border-bottom-left-radius: 10px;
+        }
+
+        .milestone-icon {
+            background-color: var(--sbux-green-light);
+            color: var(--sbux-green);
+            font-size: 2.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .milestone-content {
+            padding: 1.5rem;
+        }
+
+        .milestone-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sbux-dark);
+        }
+
+        .milestone-content p {
+            color: var(--sbux-text);
+            margin-bottom: 1rem;
+        }
+
+        .milestone-list {
+            list-style-type: none;
+        }
+
+        .milestone-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .milestone-list i {
+            color: var(--sbux-green);
+        }
+
+        .partnership-badge {
+            display: inline-block;
+            background-color: var(--sbux-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-info {
+            background-color: var(--sbux-green-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* 市场分析部分 */
         .market-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -206,39 +294,7 @@
             color: var(--sbux-green);
         }
 
-        /* 数据可视化 */
-        .data-visualization {
-            background-color: var(--sbux-green-light);
-            padding: 5rem 5%;
-        }
-
-        .data-container {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 2rem;
-        }
-
-        .data-item {
-            flex: 1;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .data-number {
-            color: var(--sbux-green);
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .data-item h3 {
-            margin-bottom: 1rem;
-            color: var(--sbux-dark);
-        }
-
-        /* Genesis Chronicle 数据仪表盘部分 */
+        /* 数据仪表盘部分 */
         .dashboard {
             background-color: white;
             border-radius: 15px;
@@ -339,12 +395,6 @@
         }
 
         /* 解决方案部分 */
-        .solution {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
         .solution-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -477,11 +527,6 @@
         }
 
         /* 财务分析 */
-        .financial-analysis {
-            background-color: var(--sbux-green-light);
-            padding: 5rem 5%;
-        }
-
         .financial-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -509,12 +554,6 @@
         }
 
         /* 投资价值 */
-        .investment-value {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
         .value-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -543,9 +582,6 @@
 
         /* Hydrofy 应用介绍 */
         .hydrofy-app {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
             background-color: var(--sbux-dark);
             color: white;
         }
@@ -797,10 +833,6 @@
                 font-size: 2.5rem;
             }
 
-            .data-container {
-                flex-direction: column;
-            }
-
             .portal-content {
                 grid-template-columns: 1fr;
             }
@@ -829,10 +861,12 @@
                 <span class="logo-text">SHINAE 西纳水培咖啡</span>
             </div>
             <nav class="nav-links">
+                <a href="#milestone">里程碑</a>
                 <a href="#market">市场分析</a>
                 <a href="#dashboard">数据看板</a>
                 <a href="#solution">解决方案</a>
                 <a href="#program">投资人计划</a>
+                <a href="#financial">财务分析</a>
                 <a href="#investment">投资价值</a>
                 <a href="#hydrofy">智能管理</a>
             </nav>
@@ -846,6 +880,78 @@
             <h1>重新定义咖啡的起源</h1>
             <p>全球创新水培咖啡种植系统，将可持续性与技术创新完美融合。加入我们，共同书写咖啡产业的新篇章。</p>
             <button class="cta-button">了解投资人计划</button>
+        </div>
+    </section>
+
+    <!-- 里程碑部分 -->
+    <section id="milestone">
+        <div class="section-header">
+            <h2>里程碑进展</h2>
+            <p>公司业务发展的关键突破与战略合作</p>
+        </div>
+        
+        <div class="milestone-container">
+            <!-- 核心合作卡片 -->
+            <div class="milestone-card">
+                <div class="milestone-badge">核心合作</div>
+                <div class="milestone-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="milestone-content">
+                    <h3>获授顶级种源，切入高端市场</h3>
+                    <div class="partnership-badge">战略合作</div>
+                    <p>我们已成功与中国地区唯一的巴拿马瑰夏咖啡种子基因授权公司达成深度战略合作。</p>
+                    <div class="certificate-info">
+                        <strong>合作伙伴：</strong>武汉市桥口区瑰夏苗圃种子营业部<br>
+                        <strong>许可证号：</strong>X42010220230496
+                    </div>
+                    <ul class="milestone-list">
+                        <li><i class="fas fa-check"></i> "种源授权 + 专业生产 + 市场推广"合作模式</li>
+                        <li><i class="fas fa-check"></i> 对方提供纯正巴拿马瑰夏咖啡原种</li>
+                        <li><i class="fas fa-check"></i> 我方利用水培技术培育高品质幼苗</li>
+                        <li><i class="fas fa-check"></i> 每年稳定供应40-60万株水培瑰夏幼苗</li>
+                        <li><i class="fas fa-check"></i> 切入年需求量4000-6000万株的巨大市场</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 战略配套卡片 -->
+            <div class="milestone-card">
+                <div class="milestone-badge">战略配套</div>
+                <div class="milestone-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="milestone-content">
+                    <h3>落地广州白云机场基地</h3>
+                    <p>为保障合作顺利交付与产能扩张，我们已与广州白云机场水处理厂达成闲置用地使用协议。</p>
+                    <ul class="milestone-list">
+                        <li><i class="fas fa-check"></i> 地上优质农用地：位于机场附近的园林农业用地</li>
+                        <li><i class="fas fa-check"></i> 地下灵活空间：地下车库的闲置用地</li>
+                        <li><i class="fas fa-check"></i> 性质完全合规，符合咖啡幼苗培育要求</li>
+                        <li><i class="fas fa-check"></i> 环境可控，可用于育苗特定环节</li>
+                        <li><i class="fas fa-check"></i> 可作为备用扩产区域</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 战略展望卡片 -->
+            <div class="milestone-card">
+                <div class="milestone-badge">战略展望</div>
+                <div class="milestone-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="milestone-content">
+                    <h3>双轮驱动，构建完整商业闭环</h3>
+                    <p>通过"顶级种源合作"与"战略性生产基地落地"的双轮驱动，成功构建从种源、生产到市场的完整商业闭环。</p>
+                    <ul class="milestone-list">
+                        <li><i class="fas fa-check"></i> 水培技术实力获顶尖产业链认可</li>
+                        <li><i class="fas fa-check"></i> 构筑高业务壁垒，锁定国内顶级瑰夏种源</li>
+                        <li><i class="fas fa-check"></i> 瑰夏幼苗市价达35-50元/株</li>
+                        <li><i class="fas fa-check"></i> 预计营业额1400-3000万元人民币</li>
+                        <li><i class="fas fa-check"></i> 依托广州白云机场基地，确保稳定供应</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -907,56 +1013,54 @@
         </div>
     </section>
 
-    <!-- Genesis Chronicle 数据仪表盘部分 -->
+    <!-- 数据仪表盘部分 -->
     <section id="dashboard">
-        <div class="container">
-            <div class="section-header">
-                <h2>实时项目数据看板</h2>
-                <p>追踪我们的环境影响与技术创新成果</p>
+        <div class="section-header">
+            <h2>实时项目数据看板</h2>
+            <p>追踪我们的环境影响与技术创新成果</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h3 class="dashboard-title">全球水培咖啡影响力指标</h3>
+                <div class="last-updated">最后更新: <span id="update-time">刚刚</span></div>
             </div>
             
-            <div class="dashboard">
-                <div class="dashboard-header">
-                    <h3 class="dashboard-title">全球水培咖啡影响力指标</h3>
-                    <div class="last-updated">最后更新: <span id="update-time">刚刚</span></div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="water-saved">4,826,419</div>
+                    <div class="stat-label">节约用水量（升）</div>
                 </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value" id="water-saved">4,826,419</div>
-                        <div class="stat-label">节约用水量（升）</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="co2-reduced">128,642</div>
-                        <div class="stat-label">减少二氧化碳（千克）</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="coffee-trees">12,847</div>
-                        <div class="stat-label">培育咖啡树数量</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="growth-cycles">3.2</div>
-                        <div class="stat-label">年收获周期数</div>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="co2-reduced">128,642</div>
+                    <div class="stat-label">减少二氧化碳（千克）</div>
                 </div>
-                
-                <div class="charts-container">
-                    <div class="chart-card">
-                        <h4 class="chart-title">水资源节约对比（与传统种植）</h4>
-                        <canvas id="waterChart"></canvas>
-                    </div>
-                    <div class="chart-card">
-                        <h4 class="chart-title">全球农场分布</h4>
-                        <canvas id="locationChart"></canvas>
-                    </div>
-                    <div class="chart-card">
-                        <h4 class="chart-title">生长周期效率提升</h4>
-                        <canvas id="growthChart"></canvas>
-                    </div>
-                    <div class="chart-card">
-                        <h4 class="chart-title">投资人影响力分布</h4>
-                        <canvas id="impactChart"></canvas>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="coffee-trees">12,847</div>
+                    <div class="stat-label">培育咖啡树数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="growth-cycles">3.2</div>
+                    <div class="stat-label">年收获周期数</div>
+                </div>
+            </div>
+            
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h4 class="chart-title">水资源节约对比（与传统种植）</h4>
+                    <canvas id="waterChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">全球农场分布</h4>
+                    <canvas id="locationChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">生长周期效率提升</h4>
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">投资人影响力分布</h4>
+                    <canvas id="impactChart"></canvas>
                 </div>
             </div>
         </div>
@@ -1014,62 +1118,60 @@
 
     <!-- 投资人计划部分 -->
     <section id="program" style="background-color: var(--sbux-green-light);">
-        <div class="container">
-            <div class="section-header">
-                <h2>传奇开端：创始元勋计划</h2>
-                <p>为远见者打造的永恒铭刻机会</p>
+        <div class="section-header">
+            <h2>传奇开端：创始元勋计划</h2>
+            <p>为远见者打造的永恒铭刻机会</p>
+        </div>
+        
+        <div class="program-cards">
+            <div class="program-card">
+                <div class="program-header">
+                    <h3 class="program-name">根源守护者</h3>
+                    <p class="program-subtitle">个人与天使投资人的专属荣誉</p>
+                </div>
+                <div class="program-body">
+                    <ul class="program-features">
+                        <li>一棵以您命名的专属咖啡树</li>
+                        <li>数字孪生与实时生长数据追踪</li>
+                        <li>年度专属批次典藏咖啡</li>
+                        <li>数字化荣誉证书</li>
+                        <li>App实时看护功能</li>
+                    </ul>
+                    <a href="#contact" class="program-button">了解更多</a>
+                </div>
             </div>
             
-            <div class="program-cards">
-                <div class="program-card">
-                    <div class="program-header">
-                        <h3 class="program-name">根源守护者</h3>
-                        <p class="program-subtitle">个人与天使投资人的专属荣誉</p>
-                    </div>
-                    <div class="program-body">
-                        <ul class="program-features">
-                            <li>一棵以您命名的专属咖啡树</li>
-                            <li>数字孪生与实时生长数据追踪</li>
-                            <li>年度专属批次典藏咖啡</li>
-                            <li>数字化荣誉证书</li>
-                            <li>App实时看护功能</li>
-                        </ul>
-                        <a href="#contact" class="program-button">了解更多</a>
-                    </div>
+            <div class="program-card">
+                <div class="program-header">
+                    <h3 class="program-name">革新基石</h3>
+                    <p class="program-subtitle">机构与风险投资的核心展示</p>
                 </div>
-                
-                <div class="program-card">
-                    <div class="program-header">
-                        <h3 class="program-name">革新基石</h3>
-                        <p class="program-subtitle">机构与风险投资的核心展示</p>
-                    </div>
-                    <div class="program-body">
-                        <ul class="program-features">
-                            <li>核心水培系统单元冠名权</li>
-                            <li>品牌墙与参观路线展示</li>
-                            <li>官网荣誉殿堂显著位置</li>
-                            <li>产品溯源故事特别鸣谢</li>
-                            <li>年度影响力报告</li>
-                        </ul>
-                        <a href="#contact" class="program-button">了解更多</a>
-                    </div>
+                <div class="program-body">
+                    <ul class="program-features">
+                        <li>核心水培系统单元冠名权</li>
+                        <li>品牌墙与参观路线展示</li>
+                        <li>官网荣誉殿堂显著位置</li>
+                        <li>产品溯源故事特别鸣谢</li>
+                        <li>年度影响力报告</li>
+                    </ul>
+                    <a href="#contact" class="program-button">了解更多</a>
                 </div>
-                
-                <div class="program-card">
-                    <div class="program-header">
-                        <h3 class="program-name">殿堂级创始合伙人</h3>
-                        <p class="program-subtitle">领投方与战略投资人的顶级荣誉</p>
-                    </div>
-                    <div class="program-body">
-                        <ul class="program-features">
-                            <li>首座农场"荣誉墙"永久冠名</li>
-                            <li>所有上述权益的顶级版本</li>
-                            <li>公司决策委员会观察员席位</li>
-                            <li>全球发布活动特别致谢</li>
-                            <li>未来项目优先投资权</li>
-                        </ul>
-                        <a href="#contact" class="program-button">了解更多</a>
-                    </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-header">
+                    <h3 class="program-name">殿堂级创始合伙人</h3>
+                    <p class="program-subtitle">领投方与战略投资人的顶级荣誉</p>
+                </div>
+                <div class="program-body">
+                    <ul class="program-features">
+                        <li>首座农场"荣誉墙"永久冠名</li>
+                        <li>所有上述权益的顶级版本</li>
+                        <li>公司决策委员会观察员席位</li>
+                        <li>全球发布活动特别致谢</li>
+                        <li>未来项目优先投资权</li>
+                    </ul>
+                    <a href="#contact" class="program-button">了解更多</a>
                 </div>
             </div>
         </div>
@@ -1247,85 +1349,83 @@
 
     <!-- 投资人门户预览 -->
     <section id="portal">
-        <div class="container">
-            <div class="section-header">
-                <h2>投资人专属门户预览</h2>
-                <p>实时追踪您的投资影响力与专属权益</p>
+        <div class="section-header">
+            <h2>投资人专属门户预览</h2>
+            <p>实时追踪您的投资影响力与专属权益</p>
+        </div>
+        
+        <div class="portal-preview">
+            <div class="portal-header">
+                <div class="portal-title">投资人仪表板 | John Davidson 先生</div>
+                <div class="portal-nav">
+                    <div class="portal-nav-item active">我的咖啡树</div>
+                    <div class="portal-nav-item">影响力报告</div>
+                    <div class="portal-nav-item">专属批次</div>
+                    <div class="portal-nav-item">数字证书</div>
+                </div>
             </div>
             
-            <div class="portal-preview">
-                <div class="portal-header">
-                    <div class="portal-title">投资人仪表板 | John Davidson 先生</div>
-                    <div class="portal-nav">
-                        <div class="portal-nav-item active">我的咖啡树</div>
-                        <div class="portal-nav-item">影响力报告</div>
-                        <div class="portal-nav-item">专属批次</div>
-                        <div class="portal-nav-item">数字证书</div>
+            <div class="portal-content">
+                <div class="portal-card">
+                    <h4 class="portal-card-title">我的咖啡树 #GC-0427</h4>
+                    <div class="tree-health">
+                        <div class="tree-image">
+                            <span style="font-size: 24px;">🌱</span>
+                        </div>
+                        <div class="tree-stats">
+                            <div class="stat-item">
+                                <div>营养水平</div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill nutrients"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div>水分平衡</div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill hydration"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div>生长进度</div>
+                                <div class="stat-bar">
+                                    <div class="stat-fill growth"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; font-size: 14px;">
+                        <div>预计收获时间: <strong>2024年11月</strong></div>
+                        <div>当前状态: <strong>健康生长中</strong></div>
                     </div>
                 </div>
                 
-                <div class="portal-content">
-                    <div class="portal-card">
-                        <h4 class="portal-card-title">我的咖啡树 #GC-0427</h4>
-                        <div class="tree-health">
-                            <div class="tree-image">
-                                <span style="font-size: 24px;">🌱</span>
-                            </div>
-                            <div class="tree-stats">
-                                <div class="stat-item">
-                                    <div>营养水平</div>
-                                    <div class="stat-bar">
-                                        <div class="stat-fill nutrients"></div>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div>水分平衡</div>
-                                    <div class="stat-bar">
-                                        <div class="stat-fill hydration"></div>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div>生长进度</div>
-                                    <div class="stat-bar">
-                                        <div class="stat-fill growth"></div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="portal-card">
+                    <h4 class="portal-card-title">我的影响力报告</h4>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>节约水资源</span>
+                            <span>42,800 升</span>
                         </div>
-                        <div style="margin-top: 15px; font-size: 14px;">
-                            <div>预计收获时间: <strong>2024年11月</strong></div>
-                            <div>当前状态: <strong>健康生长中</strong></div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="background-color: #2196F3; width: 85%;"></div>
                         </div>
                     </div>
-                    
-                    <div class="portal-card">
-                        <h4 class="portal-card-title">我的影响力报告</h4>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span>节约水资源</span>
-                                <span>42,800 升</span>
-                            </div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="background-color: #2196F3; width: 85%;"></div>
-                            </div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>减少碳排放</span>
+                            <span>1,240 千克</span>
                         </div>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span>减少碳排放</span>
-                                <span>1,240 千克</span>
-                            </div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="background-color: #4CAF50; width: 70%;"></div>
-                            </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="background-color: #4CAF50; width: 70%;"></div>
                         </div>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                                <span>支持本地就业</span>
-                                <span>12 个岗位</span>
-                            </div>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="background-color: #FF9800; width: 60%;"></div>
-                            </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>支持本地就业</span>
+                            <span>12 个岗位</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="background-color: #FF9800; width: 60%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1408,7 +1508,7 @@
         }, observerOptions);
 
         // 观察卡片元素
-        document.querySelectorAll('.market-card, .solution-card, .value-card, .app-card, .program-card, .stat-card, .chart-card, .portal-card').forEach(card => {
+        document.querySelectorAll('.market-card, .milestone-card, .value-card, .app-card, .program-card, .stat-card, .chart-card, .solution-card').forEach(card => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
