@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHINAE 西纳水培咖啡 | 全球创新水培咖啡解决方案</title>
+    <title>SHINAE COFFEE | 全球创新水培咖啡解决方案</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* 星巴克风格配色 */
+        /* X.com风格配色 - 深色主题为主 */
         :root {
-            --sbux-green: #006241;
-            --sbux-green-light: #d4e9e2;
-            --sbux-gold: #cba258;
-            --sbux-warm: #f2f0eb;
-            --sbux-dark: #1e3932;
-            --sbux-white: #ffffff;
-            --sbux-text: #2b2b2b;
-            --innovation: #3498db;
-            --positive: #2ecc71;
+            --primary-black: #000000;
+            --x-dark-gray: #15202b;
+            --x-light-gray: #2f3336;
+            --x-blue: #1d9bf0;
+            --x-green: #00ba7c;
+            --x-gold: #ffd700;
+            --x-white: #ffffff;
+            --x-text: #e7e9ea;
+            --x-card-bg: #1e2732;
+            --x-hover: #1c2938;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--sbux-warm);
-            color: var(--sbux-text);
-            line-height: 1.6;
+            background-color: var(--primary-black);
+            color: var(--x-text);
+            line-height: 1.5;
         }
 
-        /* 头部导航 */
+        /* 头部导航 - X风格 */
         header {
-            background-color: var(--sbux-white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .nav-container {
@@ -58,56 +60,58 @@
         }
 
         .logo-icon {
-            color: var(--sbux-green);
+            color: var(--x-blue);
             font-size: 1.8rem;
         }
 
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--sbux-green);
+            color: var(--x-white);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--sbux-text);
-            font-weight: 600;
-            transition: color 0.3s;
+            color: var(--x-text);
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            color: var(--sbux-green);
+            color: var(--x-blue);
         }
 
         .cta-button {
-            background-color: var(--sbux-green);
+            background-color: var(--x-blue);
             color: white;
             border: none;
             padding: 0.7rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.2s;
         }
 
         .cta-button:hover {
-            background-color: var(--sbux-dark);
+            background-color: #1a8cd8;
         }
 
-        /* 英雄区域 */
+        /* 英雄区域 - X风格 */
         .hero {
-            background: linear-gradient(rgba(30, 57, 50, 0.8), rgba(30, 57, 50, 0.8)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                         url('https://images.unsplash.com/photo-1591862715132-1d8d337c5fdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
             padding: 10rem 5% 5rem;
             text-align: center;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .hero-content {
@@ -119,6 +123,9 @@
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
+            background: linear-gradient(45deg, var(--x-blue), var(--x-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
@@ -130,6 +137,7 @@
         /* 通用部分样式 */
         section {
             padding: 5rem 5%;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .container {
@@ -145,7 +153,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -159,21 +167,21 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--sbux-gold);
+            background-color: var(--x-blue);
         }
 
         .section-header p {
             font-size: 1.2rem;
-            color: var(--sbux-text);
+            color: var(--x-text);
             max-width: 600px;
             margin: 0 auto;
+            opacity: 0.8;
         }
 
         /* 技术介绍部分 */
         .tech-intro {
-            background-color: white;
+            background-color: var(--x-dark-gray);
             padding: 80px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .tech-grid {
@@ -184,34 +192,36 @@
         }
 
         .tech-card {
-            background-color: var(--sbux-green-light);
+            background-color: var(--x-card-bg);
             border-radius: 10px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
         }
 
         .tech-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
+            background-color: var(--x-hover);
         }
 
         .tech-card i {
             font-size: 3rem;
-            color: var(--sbux-green);
+            color: var(--x-blue);
             margin-bottom: 20px;
         }
 
         .tech-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         /* 影响分析部分 */
         .impact-section {
             padding: 80px 0;
-            background-color: #f9f9f9;
+            background-color: var(--primary-black);
         }
 
         .impact-tabs {
@@ -224,21 +234,23 @@
 
         .impact-tab {
             padding: 12px 25px;
-            background-color: white;
+            background-color: var(--x-card-bg);
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid transparent;
+            border: 1px solid var(--x-light-gray);
             font-weight: 600;
         }
 
         .impact-tab:hover {
-            background-color: var(--sbux-green-light);
+            background-color: var(--x-hover);
+            border-color: var(--x-blue);
         }
 
         .impact-tab.active {
-            background-color: var(--sbux-green);
+            background-color: var(--x-blue);
             color: white;
+            border-color: var(--x-blue);
         }
 
         .impact-content {
@@ -250,10 +262,10 @@
         }
 
         .impact-card {
-            background-color: white;
+            background-color: var(--x-card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--x-light-gray);
             margin-bottom: 30px;
         }
 
@@ -261,20 +273,20 @@
             padding: 20px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .impact-icon {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background-color: var(--sbux-green-light);
+            background-color: rgba(29, 155, 240, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
             font-size: 1.5rem;
-            color: var(--sbux-green);
+            color: var(--x-blue);
         }
 
         .impact-title {
@@ -283,7 +295,7 @@
 
         .impact-title h3 {
             font-size: 1.5rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
             margin-bottom: 5px;
         }
 
@@ -292,8 +304,8 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
-            background-color: rgba(46, 204, 113, 0.2);
-            color: var(--positive);
+            background-color: rgba(0, 186, 124, 0.2);
+            color: var(--x-green);
         }
 
         .impact-body {
@@ -309,13 +321,13 @@
         }
 
         .impact-problem {
-            background-color: rgba(231, 76, 60, 0.05);
-            border-left: 4px solid #e74c3c;
+            background-color: rgba(244, 33, 46, 0.05);
+            border-left: 4px solid #f4212e;
         }
 
         .impact-solution {
-            background-color: rgba(46, 204, 113, 0.1);
-            border-left: 4px solid var(--positive);
+            background-color: rgba(0, 186, 124, 0.1);
+            border-left: 4px solid var(--x-green);
         }
 
         .impact-body h4 {
@@ -323,6 +335,7 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
+            color: var(--x-white);
         }
 
         .impact-body h4 i {
@@ -346,32 +359,33 @@
         }
 
         .milestone-card {
-            background: white;
+            background: var(--x-card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
             position: relative;
         }
 
         .milestone-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .milestone-badge {
             position: absolute;
             top: 0;
             right: 0;
-            background-color: var(--sbux-gold);
-            color: var(--sbux-dark);
+            background-color: var(--x-blue);
+            color: var(--x-white);
             padding: 0.5rem 1rem;
             font-weight: 700;
             border-bottom-left-radius: 10px;
         }
 
         .milestone-icon {
-            background-color: var(--sbux-green-light);
-            color: var(--sbux-green);
+            background-color: rgba(29, 155, 240, 0.1);
+            color: var(--x-blue);
             font-size: 2.5rem;
             padding: 1.5rem;
             text-align: center;
@@ -384,12 +398,13 @@
         .milestone-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         .milestone-content p {
-            color: var(--sbux-text);
+            color: var(--x-text);
             margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
         .milestone-list {
@@ -404,12 +419,12 @@
         }
 
         .milestone-list i {
-            color: var(--sbux-green);
+            color: var(--x-blue);
         }
 
         .partnership-badge {
             display: inline-block;
-            background-color: var(--sbux-green);
+            background-color: var(--x-blue);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -419,11 +434,12 @@
         }
 
         .certificate-info {
-            background-color: var(--sbux-green-light);
+            background-color: rgba(29, 155, 240, 0.1);
             padding: 1rem;
             border-radius: 8px;
             margin-top: 1rem;
             font-size: 0.9rem;
+            border: 1px solid rgba(29, 155, 240, 0.2);
         }
 
         /* 市场分析部分 */
@@ -434,20 +450,21 @@
         }
 
         .market-card {
-            background: white;
+            background: var(--x-card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
         }
 
         .market-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .market-icon {
-            background-color: var(--sbux-green-light);
-            color: var(--sbux-green);
+            background-color: rgba(29, 155, 240, 0.1);
+            color: var(--x-blue);
             font-size: 2.5rem;
             padding: 1.5rem;
             text-align: center;
@@ -460,12 +477,13 @@
         .market-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         .market-content p {
-            color: var(--sbux-text);
+            color: var(--x-text);
             margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
         .market-list {
@@ -480,13 +498,13 @@
         }
 
         .market-list i {
-            color: var(--sbux-green);
+            color: var(--x-blue);
         }
 
         /* 技术优势部分 */
         .advantages-section {
             padding: 80px 0;
-            background-color: white;
+            background-color: var(--x-dark-gray);
         }
 
         .advantages-grid {
@@ -496,20 +514,21 @@
         }
 
         .advantage-card {
-            background-color: var(--sbux-green-light);
+            background-color: var(--x-card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
         }
 
         .advantage-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .advantage-icon {
             height: 120px;
-            background-color: var(--innovation);
+            background-color: var(--x-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -524,12 +543,13 @@
         .advantage-content h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         .advantage-content p {
             margin-bottom: 20px;
-            color: #555;
+            color: var(--x-text);
+            opacity: 0.9;
         }
 
         .advantage-stats {
@@ -537,29 +557,31 @@
             align-items: center;
             margin-top: 20px;
             font-size: 0.9rem;
-            color: #666;
-            background: rgba(255,255,255,0.7);
+            color: var(--x-text);
+            background: rgba(255,255,255,0.05);
             padding: 10px 15px;
             border-radius: 8px;
+            border: 1px solid var(--x-light-gray);
         }
 
         .advantage-stats i {
             margin-right: 8px;
-            color: var(--positive);
+            color: var(--x-green);
         }
 
         /* 数据仪表盘部分 */
         .dashboard {
-            background-color: white;
+            background-color: var(--x-card-bg);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid var(--x-light-gray);
             padding: 30px;
             margin-bottom: 40px;
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
 
         .dashboard:hover {
             transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .dashboard-header {
@@ -571,12 +593,12 @@
 
         .dashboard-title {
             font-size: 24px;
-            color: var(--sbux-green);
+            color: var(--x-white);
         }
 
         .last-updated {
             font-size: 14px;
-            color: #777;
+            color: #8899a6;
         }
 
         .stats-grid {
@@ -587,13 +609,14 @@
         }
 
         .stat-card {
-            background-color: var(--sbux-green-light);
+            background-color: var(--x-dark-gray);
             border-radius: 12px;
             padding: 25px 20px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--x-light-gray);
         }
 
         .stat-card:before {
@@ -603,24 +626,24 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background-color: var(--sbux-green);
+            background-color: var(--x-blue);
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--x-blue);
         }
 
         .stat-value {
             font-size: 36px;
             font-weight: 700;
-            color: var(--sbux-green);
+            color: var(--x-blue);
             margin-bottom: 10px;
         }
 
         .stat-label {
             font-size: 14px;
-            color: var(--sbux-text);
+            color: var(--x-text);
         }
 
         .charts-container {
@@ -630,21 +653,22 @@
         }
 
         .chart-card {
-            background-color: white;
+            background-color: var(--x-dark-gray);
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
         }
 
         .chart-card:hover {
             transform: translateY(-3px);
+            border-color: var(--x-blue);
         }
 
         .chart-title {
             font-size: 18px;
             margin-bottom: 15px;
-            color: var(--sbux-black);
+            color: var(--x-white);
             font-weight: 600;
         }
 
@@ -656,20 +680,21 @@
         }
 
         .solution-card {
-            background: white;
+            background: var(--x-card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
         }
 
         .solution-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .solution-icon {
-            background-color: var(--sbux-green-light);
-            color: var(--sbux-green);
+            background-color: rgba(29, 155, 240, 0.1);
+            color: var(--x-blue);
             font-size: 2.5rem;
             padding: 1.5rem;
             text-align: center;
@@ -682,12 +707,13 @@
         .solution-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         .solution-content p {
-            color: var(--sbux-text);
+            color: var(--x-text);
             margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
         /* 投资人计划部分 */
@@ -699,11 +725,11 @@
         }
 
         .program-card {
-            background-color: white;
+            background-color: var(--x-card-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--x-light-gray);
+            transition: all 0.3s;
             position: relative;
         }
 
@@ -714,29 +740,32 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--sbux-green), var(--sbux-gold));
+            background: linear-gradient(90deg, var(--x-blue), var(--x-green));
         }
 
         .program-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--x-blue);
         }
 
         .program-header {
-            background-color: var(--sbux-green);
+            background-color: rgba(29, 155, 240, 0.2);
             color: white;
             padding: 25px 20px;
             text-align: center;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .program-name {
             font-size: 22px;
             margin-bottom: 5px;
+            color: var(--x-white);
         }
 
         .program-subtitle {
             font-size: 14px;
             opacity: 0.8;
+            color: var(--x-text);
         }
 
         .program-body {
@@ -750,14 +779,14 @@
 
         .program-features li {
             padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--x-light-gray);
             display: flex;
             align-items: center;
         }
 
         .program-features li:before {
             content: '✓';
-            color: var(--sbux-green);
+            color: var(--x-blue);
             font-weight: bold;
             margin-right: 10px;
             font-size: 18px;
@@ -766,28 +795,30 @@
         .program-button {
             display: block;
             text-align: center;
-            background-color: var(--sbux-gold);
-            color: var(--sbux-black);
+            background-color: var(--x-blue);
+            color: var(--x-white);
             padding: 12px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
         .program-button:hover {
-            background-color: #b89446;
-            transform: translateY(-2px);
+            background-color: #1a8cd8;
         }
 
         /* 财务分析 */
         .financial-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
+            background: var(--x-card-bg);
             border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--x-light-gray);
         }
 
         .financial-table {
@@ -799,12 +830,12 @@
         .financial-table th, .financial-table td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .financial-table th {
-            background-color: var(--sbux-green-light);
-            color: var(--sbux-dark);
+            background-color: rgba(29, 155, 240, 0.1);
+            color: var(--x-white);
         }
 
         /* 投资价值 */
@@ -815,29 +846,35 @@
         }
 
         .value-card {
-            background: white;
+            background: var(--x-card-bg);
             border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--x-light-gray);
             text-align: center;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--x-blue);
         }
 
         .value-icon {
             font-size: 3rem;
-            color: var(--sbux-green);
+            color: var(--x-blue);
             margin-bottom: 1rem;
         }
 
         .value-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         /* 实施路线图 */
         .roadmap-section {
             padding: 80px 0;
-            background-color: #f9f9f9;
+            background-color: var(--primary-black);
         }
 
         .timeline {
@@ -853,7 +890,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: var(--sbux-green);
+            background: var(--x-blue);
             transform: translateX(-50%);
         }
 
@@ -875,10 +912,10 @@
         }
 
         .timeline-content {
-            background: white;
+            background: var(--x-card-bg);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--x-light-gray);
             position: relative;
         }
 
@@ -891,7 +928,7 @@
             height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-left: 10px solid white;
+            border-left: 10px solid var(--x-card-bg);
         }
 
         .timeline-item:nth-child(even) .timeline-content:after {
@@ -903,7 +940,7 @@
             height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-right: 10px solid white;
+            border-right: 10px solid var(--x-card-bg);
         }
 
         .timeline-dot {
@@ -911,7 +948,7 @@
             top: 30px;
             width: 20px;
             height: 20px;
-            background: var(--sbux-green);
+            background: var(--x-blue);
             border-radius: 50%;
             z-index: 1;
         }
@@ -926,18 +963,18 @@
 
         .timeline-content h3 {
             margin-bottom: 10px;
-            color: var(--sbux-dark);
+            color: var(--x-white);
         }
 
         .timeline-content .date {
             font-weight: 600;
-            color: var(--innovation);
+            color: var(--x-blue);
             margin-bottom: 10px;
         }
 
         /* Hydrofy 应用介绍 */
         .hydrofy-app {
-            background-color: var(--sbux-dark);
+            background-color: var(--x-dark-gray);
             color: white;
         }
 
@@ -948,16 +985,16 @@
         }
 
         .app-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--x-card-bg);
             border-radius: 10px;
             padding: 2rem;
-            backdrop-filter: blur(10px);
+            border: 1px solid var(--x-light-gray);
         }
 
         .app-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: var(--sbux-green-light);
+            color: var(--x-blue);
         }
 
         .app-card ul {
@@ -972,30 +1009,32 @@
         }
 
         .app-card i {
-            color: var(--sbux-green-light);
+            color: var(--x-blue);
             margin-top: 0.2rem;
         }
 
         /* 投资人门户预览 */
         .portal-preview {
-            background-color: var(--sbux-dark);
+            background-color: var(--x-dark-gray);
             color: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid var(--x-light-gray);
         }
 
         .portal-header {
-            background-color: #2d4a42;
+            background-color: var(--x-card-bg);
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--x-light-gray);
         }
 
         .portal-title {
             font-size: 18px;
             font-weight: 600;
+            color: var(--x-white);
         }
 
         .portal-nav {
@@ -1010,6 +1049,7 @@
             transition: opacity 0.3s;
             padding: 5px 0;
             position: relative;
+            color: var(--x-text);
         }
 
         .portal-nav-item:after {
@@ -1019,13 +1059,14 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--sbux-gold);
+            background-color: var(--x-blue);
             transition: width 0.3s;
         }
 
         .portal-nav-item.active {
             opacity: 1;
             font-weight: 600;
+            color: var(--x-white);
         }
 
         .portal-nav-item.active:after {
@@ -1034,6 +1075,7 @@
 
         .portal-nav-item:hover {
             opacity: 1;
+            color: var(--x-white);
         }
 
         .portal-content {
@@ -1044,16 +1086,16 @@
         }
 
         .portal-card {
-            background-color: #2d4a42;
+            background-color: var(--x-card-bg);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--x-light-gray);
         }
 
         .portal-card-title {
             font-size: 16px;
             margin-bottom: 15px;
-            color: var(--sbux-gold);
+            color: var(--x-blue);
             font-weight: 600;
         }
 
@@ -1066,13 +1108,13 @@
         .tree-image {
             width: 80px;
             height: 80px;
-            background-color: #3a5c52;
+            background-color: var(--x-dark-gray);
             border-radius: 50%;
             margin-right: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 3px solid var(--sbux-gold);
+            border: 3px solid var(--x-blue);
         }
 
         .tree-stats {
@@ -1081,7 +1123,7 @@
 
         .stat-bar {
             height: 8px;
-            background-color: #1e3932;
+            background-color: var(--x-light-gray);
             border-radius: 4px;
             margin-bottom: 10px;
             overflow: hidden;
@@ -1094,12 +1136,12 @@
         }
 
         .nutrients {
-            background-color: #4CAF50;
+            background-color: var(--x-green);
             width: 85%;
         }
 
         .hydration {
-            background-color: #2196F3;
+            background-color: var(--x-blue);
             width: 70%;
         }
 
@@ -1110,9 +1152,10 @@
 
         /* 页脚 */
         footer {
-            background-color: var(--sbux-dark);
+            background-color: var(--x-dark-gray);
             color: white;
             padding: 3rem 5% 2rem;
+            border-top: 1px solid var(--x-light-gray);
         }
 
         .footer-content {
@@ -1126,6 +1169,7 @@
         .footer-column h3 {
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
+            color: var(--x-white);
         }
 
         .footer-links {
@@ -1137,13 +1181,13 @@
         }
 
         .footer-links a {
-            color: var(--sbux-green-light);
+            color: var(--x-text);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: white;
+            color: var(--x-blue);
         }
 
         .contact-info {
@@ -1152,14 +1196,121 @@
 
         .contact-info p {
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--x-blue);
+            width: 20px;
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid var(--x-light-gray);
             max-width: 1400px;
             margin: 0 auto;
+            color: var(--x-text);
+        }
+
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--x-card-bg);
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--x-light-gray);
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--x-text);
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--x-white);
+        }
+
+        .modal h3 {
+            color: var(--x-white);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .modal p {
+            margin-bottom: 15px;
+            color: var(--x-text);
+        }
+
+        .contact-details {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: rgba(29, 155, 240, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(29, 155, 240, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(29, 155, 240, 0.05);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--x-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text strong {
+            color: var(--x-white);
+            display: block;
+            margin-bottom: 5px;
         }
 
         /* 响应式设计 */
@@ -1242,7 +1393,7 @@
         <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-seedling logo-icon"></i>
-                <span class="logo-text">SHINAE 西纳水培咖啡</span>
+                <span class="logo-text">SHINAE COFFEE</span>
             </div>
             <nav class="nav-links">
                 <a href="#tech">技术介绍</a>
@@ -1258,7 +1409,7 @@
                 <a href="#roadmap">实施路线图</a>
                 <a href="#hydrofy">智能管理</a>
             </nav>
-            <button class="cta-button">获取商业计划书</button>
+            <button class="cta-button" id="business-plan-btn">获取商业计划书</button>
         </div>
     </header>
 
@@ -1266,7 +1417,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>重新定义咖啡的起源</h1>
-            <p>全球创新雾化水培咖啡种植系统，将可持续性与技术创新完美融合。加入我们，共同书写咖啡产业的新篇章。</p>
+            <p>全球创新水培咖啡种植系统，将可持续性与技术创新完美融合。加入我们，共同书写咖啡产业的新篇章。</p>
             <button class="cta-button">了解投资人计划</button>
         </div>
     </section>
@@ -1275,21 +1426,21 @@
     <section class="tech-intro" id="tech">
         <div class="container">
             <div class="section-header">
-                <h2>什么是雾化水培咖啡种植？</h2>
-                <p>一种在受控环境中使用雾化营养液培育咖啡树的创新农业技术</p>
+                <h2>什么是水培咖啡种植？</h2>
+                <p>一种在受控环境中使用营养液培育咖啡树的创新农业技术</p>
             </div>
             
             <div class="tech-grid">
                 <div class="tech-card">
                     <i class="fas fa-cloud"></i>
-                    <h3>雾化营养技术</h3>
-                    <p>通过精细雾化系统将营养液直接喷洒到咖啡树根部，实现高效养分吸收</p>
+                    <h3>营养技术</h3>
+                    <p>通过精细系统将营养液直接喷洒到咖啡树根部，实现高效养分吸收</p>
                 </div>
                 
                 <div class="tech-card">
                     <i class="fas fa-tint"></i>
                     <h3>节水95%</h3>
-                    <p>相比传统种植方法，雾化水培技术可减少95%的用水量</p>
+                    <p>相比传统种植方法，水培技术可减少95%的用水量</p>
                 </div>
                 
                 <div class="tech-card">
@@ -1303,21 +1454,21 @@
                 <h2>技术原理</h2>
             </div>
             
-            <div style="background: var(--sbux-green-light); border-radius: 10px; padding: 30px; margin-top: 20px;">
+            <div style="background: rgba(29, 155, 240, 0.1); border-radius: 10px; padding: 30px; margin-top: 20px; border: 1px solid rgba(29, 155, 240, 0.2);">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
                     <div>
-                        <h3 style="margin-bottom: 15px; color: var(--sbux-dark);">雾化水培系统工作原理</h3>
+                        <h3 style="margin-bottom: 15px; color: var(--x-white);">水培系统工作原理</h3>
                         <ul style="padding-left: 20px;">
                             <li>咖啡树苗种植在无土介质中，根部暴露在封闭环境中</li>
-                            <li>精密雾化系统定时喷洒含有营养液的水雾</li>
+                            <li>精密系统定时喷洒含有营养液的水</li>
                             <li>LED光照系统模拟最佳日照条件</li>
                             <li>环境控制系统维持最佳温湿度</li>
                             <li>自动化监控系统实时调整生长参数</li>
                             <li>收获期缩短至传统方法的60%</li>
                         </ul>
                     </div>
-                    <div style="background: var(--innovation); height: 250px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                        雾化水培系统示意图
+                    <div style="background: var(--x-blue); height: 250px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 1px solid rgba(29, 155, 240, 0.5);">
+                        水培系统示意图
                     </div>
                 </div>
             </div>
@@ -1329,7 +1480,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>对供应链核心追求的积极影响</h2>
-                <p>雾化水培技术如何帮助应对2050年咖啡危机带来的挑战</p>
+                <p>水培技术如何帮助应对2050年咖啡危机带来的挑战</p>
             </div>
             
             <div class="impact-tabs">
@@ -1365,7 +1516,7 @@
                             </ul>
                         </div>
                         <div class="impact-solution">
-                            <h4><i class="fas fa-check-circle"></i> 雾化水培的解决方案</h4>
+                            <h4><i class="fas fa-check-circle"></i> 水培的解决方案</h4>
                             <ul>
                                 <li>全年无休生产，彻底消除季节性波动</li>
                                 <li>受控环境避免极端天气和病虫害影响</li>
@@ -1402,7 +1553,7 @@
                             </ul>
                         </div>
                         <div class="impact-solution">
-                            <h4><i class="fas fa-check-circle"></i> 雾化水培的解决方案</h4>
+                            <h4><i class="fas fa-check-circle"></i> 水培的解决方案</h4>
                             <ul>
                                 <li>精确控制营养配方，确保风味一致性</li>
                                 <li>标准化环境参数，消除地域差异</li>
@@ -1439,7 +1590,7 @@
                             </ul>
                         </div>
                         <div class="impact-solution">
-                            <h4><i class="fas fa-check-circle"></i> 雾化水培的解决方案</h4>
+                            <h4><i class="fas fa-check-circle"></i> 水培的解决方案</h4>
                             <ul>
                                 <li>垂直整合生产，减少外部依赖</li>
                                 <li>完全控制生长环境，消除外部风险</li>
@@ -1476,7 +1627,7 @@
                             </ul>
                         </div>
                         <div class="impact-solution">
-                            <h4><i class="fas fa-check-circle"></i> 雾化水培的解决方案</h4>
+                            <h4><i class="fas fa-check-circle"></i> 水培的解决方案</h4>
                             <ul>
                                 <li>垂直种植，土地使用减少90%</li>
                                 <li>节水95%，并可实现水循环利用</li>
@@ -1679,7 +1830,7 @@
     <!-- 解决方案部分 -->
     <section class="solution" id="solution">
         <div class="section-header">
-            <h2>SHINAE 西纳水培系统解决方案</h2>
+            <h2>SHINAE COFFEE 水培系统解决方案</h2>
             <p>创新水培技术解决行业核心痛点</p>
         </div>
         
@@ -1730,7 +1881,7 @@
     <section class="advantages-section" id="advantages">
         <div class="container">
             <div class="section-header">
-                <h2>雾化水培技术的核心优势</h2>
+                <h2>水培技术的核心优势</h2>
                 <p>相比传统咖啡种植方法的革命性突破</p>
             </div>
             
@@ -1743,7 +1894,7 @@
                         <h3>产量提升300%</h3>
                         <p>通过多层垂直种植和全年无休生产，单位面积年产量达到传统方法的3倍以上。</p>
                         <div class="advantage-stats">
-                            <i class="fas fa-seedling"></i> 传统种植: 1-1.5吨/公顷 | 雾化水培: 4-5吨/公顷
+                            <i class="fas fa-seedling"></i> 传统种植: 1-1.5吨/公顷 | 水培: 4-5吨/公顷
                         </div>
                     </div>
                 </div>
@@ -1754,9 +1905,9 @@
                     </div>
                     <div class="advantage-content">
                         <h3>节水95%</h3>
-                        <p>封闭循环系统几乎无蒸发损失，精准雾化灌溉极大提高水资源利用效率。</p>
+                        <p>封闭循环系统几乎无蒸发损失，精准灌溉极大提高水资源利用效率。</p>
                         <div class="advantage-stats">
-                            <i class="fas fa-tint"></i> 传统种植: 20,000升/公斤 | 雾化水培: 1,000升/公斤
+                            <i class="fas fa-tint"></i> 传统种植: 20,000升/公斤 | 水培: 1,000升/公斤
                         </div>
                     </div>
                 </div>
@@ -1817,7 +1968,7 @@
     </section>
 
     <!-- 投资人计划部分 -->
-    <section id="program" style="background-color: var(--sbux-green-light);">
+    <section id="program" style="background-color: rgba(29, 155, 240, 0.1);">
         <div class="section-header">
             <h2>传奇开端：创始元勋计划</h2>
             <p>为远见者打造的永恒铭刻机会</p>
@@ -1837,7 +1988,7 @@
                         <li>数字化荣誉证书</li>
                         <li>App实时看护功能</li>
                     </ul>
-                    <a href="#contact" class="program-button">了解更多</a>
+                    <button class="program-button contact-modal-btn" data-plan="根源守护者">了解更多</button>
                 </div>
             </div>
             
@@ -1854,7 +2005,7 @@
                         <li>产品溯源故事特别鸣谢</li>
                         <li>年度影响力报告</li>
                     </ul>
-                    <a href="#contact" class="program-button">了解更多</a>
+                    <button class="program-button contact-modal-btn" data-plan="革新基石">了解更多</button>
                 </div>
             </div>
             
@@ -1871,7 +2022,7 @@
                         <li>全球发布活动特别致谢</li>
                         <li>未来项目优先投资权</li>
                     </ul>
-                    <a href="#contact" class="program-button">了解更多</a>
+                    <button class="program-button contact-modal-btn" data-plan="殿堂级创始合伙人">了解更多</button>
                 </div>
             </div>
         </div>
@@ -1956,7 +2107,7 @@
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <h3>市场空间大</h3>
-                <p>2亿-3亿元市场规模，缺乏龙头企业，SHINAE 西纳水培咖啡有成为行业标杆企业的机会。</p>
+                <p>2亿-3亿元市场规模，缺乏龙头企业，SHINAE COFFEE有成为行业标杆企业的机会。</p>
             </div>
             
             <div class="value-card">
@@ -1989,16 +2140,16 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="date">2024-2025</div>
+                        <div class="date">2026-2027</div>
                         <h3>研发与试点阶段</h3>
-                        <p>建立首个实验性雾化水培咖啡农场，优化种植参数，验证技术可行性。</p>
+                        <p>建立首个实验性水培咖啡农场，优化种植参数，验证技术可行性。</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="date">2026-2028</div>
+                        <div class="date">2027-2029</div>
                         <h3>小规模商业化</h3>
                         <p>在3个主要市场建立中型种植中心，供应区域高端产品线，积累运营经验。</p>
                     </div>
@@ -2018,7 +2169,7 @@
                     <div class="timeline-content">
                         <div class="date">2033-2038</div>
                         <h3>全面部署</h3>
-                        <p>建立全球雾化水培网络，覆盖50%产品供应，成为主要咖啡来源。</p>
+                        <p>建立全球水培网络，覆盖50%产品供应，成为主要咖啡来源。</p>
                     </div>
                 </div>
                 
@@ -2027,7 +2178,7 @@
                     <div class="timeline-content">
                         <div class="date">2039-2050</div>
                         <h3>主导供应链</h3>
-                        <p>雾化水培成为主要咖啡来源，占比达70%，彻底改变咖啡供应链模式。</p>
+                        <p>水培成为主要咖啡来源，占比达70%，彻底改变咖啡供应链模式。</p>
                     </div>
                 </div>
             </div>
@@ -2038,7 +2189,7 @@
     <section class="hydrofy-app" id="hydrofy">
         <div class="section-header">
             <h2 style="color: white;">Hydrofy App - 智能水培管理与植物追踪</h2>
-            <p style="color: var(--sbux-green-light);">将您的水培装置变成一个蓬勃发展的、数据驱动的花园</p>
+            <p style="color: var(--x-blue);">将您的水培装置变成一个蓬勃发展的、数据驱动的花园</p>
         </div>
         
         <div class="hydrofy-content">
@@ -2164,7 +2315,7 @@
                             <span>42,800 升</span>
                         </div>
                         <div class="stat-bar">
-                            <div class="stat-fill" style="background-color: #2196F3; width: 85%;"></div>
+                            <div class="stat-fill" style="background-color: var(--x-blue); width: 85%;"></div>
                         </div>
                     </div>
                     <div style="margin-bottom: 15px;">
@@ -2173,7 +2324,7 @@
                             <span>1,240 千克</span>
                         </div>
                         <div class="stat-bar">
-                            <div class="stat-fill" style="background-color: #4CAF50; width: 70%;"></div>
+                            <div class="stat-fill" style="background-color: var(--x-green); width: 70%;"></div>
                         </div>
                     </div>
                     <div style="margin-bottom: 15px;">
@@ -2194,9 +2345,8 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>SHINAE 西纳水培咖啡</h3>
+                <h3>SHINAE COFFEE<sup style="font-size: 0.7rem; color: var(--x-blue);">®</sup></h3>
                 <p>通过创新水培技术，推动中国咖啡产业精品化、现代化转型。</p>
-                <!-- 已移除社交媒体图标 -->
             </div>
             
             <div class="footer-column">
@@ -2230,9 +2380,54 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2025 SHINAE 西纳水培咖啡. 保留所有权利。</p>
+            <p>&copy; 2025 SHINAE COFFEE. 保留所有权利。</p>
         </div>
     </footer>
+
+    <!-- 联系信息模态框 -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle">联系我们</h3>
+            <p>感谢您对 SHINAE COFFEE 的兴趣。我们的团队将尽快与您联系，提供详细的商业计划或投资方案。</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>电子邮件</strong>
+                        <span>erik.wong@jebi.space</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-weixin"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>微信</strong>
+                        <span>+86 15800222338</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>WhatsApp</strong>
+                        <span>+852.93188252</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--x-text); opacity: 0.8;">
+                通常我们会在24小时内回复所有咨询。如果您有紧急问题，请通过 WhatsApp 直接联系我们。
+            </p>
+        </div>
+    </div>
 
     <script>
         // 平滑滚动导航链接
@@ -2268,15 +2463,6 @@
             observer.observe(card);
         });
 
-        // CTA按钮点击处理
-        document.querySelectorAll('.cta-button, .program-button').forEach(button => {
-            button.addEventListener('click', function() {
-                document.getElementById('program').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
         // 标签切换功能
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.impact-tab');
@@ -2295,6 +2481,44 @@
                     document.getElementById(tabId).classList.add('active');
                 });
             });
+        });
+
+        // 模态框功能
+        const modal = document.getElementById('contactModal');
+        const businessPlanBtn = document.getElementById('business-plan-btn');
+        const contactModalBtns = document.querySelectorAll('.contact-modal-btn');
+        const closeModal = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modalTitle');
+
+        // 打开商业计划书模态框
+        businessPlanBtn.addEventListener('click', function() {
+            modalTitle.textContent = '获取商业计划书';
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // 打开投资人计划模态框
+        contactModalBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const planType = this.getAttribute('data-plan');
+                modalTitle.textContent = `${planType}计划 - 联系我们`;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // 关闭模态框
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // 点击模态框外部关闭
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         });
 
         // 模拟实时数据更新
@@ -2340,11 +2564,11 @@
                         data: [180, 22],
                         backgroundColor: [
                             'rgba(108, 117, 125, 0.7)',
-                            'rgba(0, 98, 65, 0.7)'
+                            'rgba(29, 155, 240, 0.7)'
                         ],
                         borderColor: [
                             'rgb(108, 117, 125)',
-                            'rgb(0, 98, 65)'
+                            'rgb(29, 155, 240)'
                         ],
                         borderWidth: 1
                     }]
@@ -2353,7 +2577,21 @@
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#8899a6'
+                            },
+                            grid: {
+                                color: '#2f3336'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#8899a6'
+                            },
+                            grid: {
+                                color: '#2f3336'
+                            }
                         }
                     },
                     plugins: {
@@ -2373,11 +2611,11 @@
                     datasets: [{
                         data: [35, 25, 20, 15, 5],
                         backgroundColor: [
-                            'rgba(0, 98, 65, 0.7)',
-                            'rgba(203, 162, 88, 0.7)',
-                            'rgba(111, 78, 55, 0.7)',
-                            'rgba(30, 57, 50, 0.7)',
-                            'rgba(212, 233, 226, 0.7)'
+                            'rgba(29, 155, 240, 0.7)',
+                            'rgba(0, 186, 124, 0.7)',
+                            'rgba(255, 215, 0, 0.7)',
+                            'rgba(30, 39, 50, 0.7)',
+                            'rgba(111, 78, 55, 0.7)'
                         ],
                         borderWidth: 1
                     }]
@@ -2386,7 +2624,10 @@
                     responsive: true,
                     plugins: {
                         legend: {
-                            position: 'right'
+                            position: 'right',
+                            labels: {
+                                color: '#8899a6'
+                            }
                         }
                     }
                 }
@@ -2407,7 +2648,7 @@
                     }, {
                         label: '水培种植',
                         data: [16, 22, 28, 32, 36, 42],
-                        borderColor: 'rgb(0, 98, 65)',
+                        borderColor: 'rgb(29, 155, 240)',
                         tension: 0.1,
                         borderWidth: 2
                     }]
@@ -2416,7 +2657,28 @@
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#8899a6'
+                            },
+                            grid: {
+                                color: '#2f3336'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#8899a6'
+                            },
+                            grid: {
+                                color: '#2f3336'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#8899a6'
+                            }
                         }
                     }
                 }
@@ -2431,9 +2693,9 @@
                     datasets: [{
                         data: [45, 35, 20],
                         backgroundColor: [
-                            'rgba(0, 98, 65, 0.7)',
-                            'rgba(203, 162, 88, 0.7)',
-                            'rgba(111, 78, 55, 0.7)'
+                            'rgba(29, 155, 240, 0.7)',
+                            'rgba(0, 186, 124, 0.7)',
+                            'rgba(255, 215, 0, 0.7)'
                         ]
                     }]
                 },
@@ -2441,7 +2703,10 @@
                     responsive: true,
                     plugins: {
                         legend: {
-                            position: 'right'
+                            position: 'right',
+                            labels: {
+                                color: '#8899a6'
+                            }
                         }
                     }
                 }
